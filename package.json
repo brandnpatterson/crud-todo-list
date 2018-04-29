@@ -1,13 +1,14 @@
 {
-  "name": "crud-todo-list",
+  "name": "crudlist",
   "version": "1.0.0",
-  "description": "crud-todo-list",
+  "description": "crudlist",
   "author": "Brandon Patterson",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf public/*",
-    "start": "npm run clean && webpack-dev-server -d",
-    "prod": "npm run clean && NODE_ENV=production webpack -p"
+    "clean": "rimraf public/*.css public/*.js public/*.html public/*.map",
+    "deploy": "npm run prod && surge public",
+    "prod": "npm run clean && NODE_ENV=production webpack -p",
+    "start": "npm run clean && webpack-dev-server -d"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
@@ -36,6 +37,6 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/brandnpatterson/crud-todo-list.git"
+    "url": "https://github.com/brandnpatterson/crudlist.git"
   }
 }

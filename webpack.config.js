@@ -4,6 +4,8 @@ let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let StyleLintPlugin = require('stylelint-webpack-plugin');
 let autoprefixer = require('autoprefixer');
+let htmlTitle = 'CRUD List';
+
 let isProd = process.env.NODE_ENV === 'production';
 
 let cssDev = [
@@ -73,6 +75,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, '/public/'),
         compress: true,
+        open: true,
         stats: 'errors-only',
         watchContentBase: true,
     },
@@ -115,7 +118,7 @@ module.exports = {
             filename: 'index.html',
             hash: true,
             template: path.join(__dirname, '/src/') + 'template.html',
-            title: 'To Do List',
+            title: htmlTitle,
         }),
         new ExtractTextPlugin({
             filename: 'style.css',
